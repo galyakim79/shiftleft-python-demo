@@ -19,6 +19,8 @@ def login():
         "SELECT id, username, access_level FROM user WHERE username = '%s' AND password = '%s'"
         % (username, password)
     )
+    if (something(username)):
+        return
     result = query_db(query, [], True)
     if result is None:
         return jsonify({"bad_login": True}), 400
